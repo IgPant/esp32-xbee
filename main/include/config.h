@@ -85,6 +85,7 @@ typedef struct config_item {
 #define KEY_CONFIG_NTRIP_CLIENT_MOUNTPOINT "ntr_cli_mp"
 #define KEY_CONFIG_NTRIP_CLIENT_USERNAME "ntr_cli_user"
 #define KEY_CONFIG_NTRIP_CLIENT_PASSWORD "ntr_cli_pass"
+#define KEY_CONFIG_NTRIP_CLIENT_FW_UART "ntr_cli_fw_uart"
 
 #define KEY_CONFIG_NTRIP_CASTER_ACTIVE "ntr_cst_active"
 #define KEY_CONFIG_NTRIP_CASTER_COLOR "ntr_cst_color"
@@ -105,6 +106,7 @@ typedef struct config_item {
 #define KEY_CONFIG_SOCKET_CLIENT_PORT "sck_cli_port"
 #define KEY_CONFIG_SOCKET_CLIENT_TYPE_TCP_UDP "sck_cli_type"
 #define KEY_CONFIG_SOCKET_CLIENT_CONNECT_MESSAGE "sck_cli_msg"
+#define KEY_CONFIG_SOCKET_CLIENT_FW_UART "sck_cli_fw_uart"
 
 // UART
 #define KEY_CONFIG_UART_NUM "uart_num"
@@ -119,6 +121,7 @@ typedef struct config_item {
 #define KEY_CONFIG_UART_FLOW_CTRL_RTS "uart_fc_rts"
 #define KEY_CONFIG_UART_FLOW_CTRL_CTS "uart_fc_cts"
 #define KEY_CONFIG_UART_LOG_FORWARD "uart_log_fwd"
+#define KEY_CONFIG_UART_FWD_USB "uart_fwd_usb"
 
 // WiFi
 #define KEY_CONFIG_WIFI_AP_ACTIVE "w_ap_active"

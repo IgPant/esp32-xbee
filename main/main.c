@@ -82,6 +82,17 @@ void app_main()
     config_init();
     uart_init();
 
+    void uart_to_usb_serial_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data) {
+        if (event_base == UART_EVENT_READ) {
+            size_t event_data_size = (size_t) event_id;
+            fwrite(event_data, 1, event_data_size, stdout);
+            fflush(stdout);
+        }
+    }
+    if (config_get_bool1(CONF_ITEM(KEY_CONFIG_UART_FWD_USB))) {
+        uart_register_read_handler(uart_to_usb_serial_handler);
+    }
+
     esp_reset_reason_t reset_reason = esp_reset_reason();
 
     const esp_app_desc_t *app_desc = esp_ota_get_app_description();

@@ -73,6 +73,8 @@ void app_main()
     esp_log_level_set("wifi", ESP_LOG_WARN);
     esp_log_level_set("esp_netif_handlers", ESP_LOG_WARN);
 
+    esp_event_loop_create_default();
+
     core_dump_check();
 
     xTaskCreate(reset_button_task, "reset_button", 4096, NULL, TASK_PRIORITY_RESET_BUTTON, NULL);
@@ -113,8 +115,6 @@ void app_main()
     ESP_LOGI(TAG, "║ Author: Nebojša Cvetković                    ║");
     ESP_LOGI(TAG, "║ Source: https://github.com/nebkat/esp32-xbee ║");
     ESP_LOGI(TAG, "╚══════════════════════════════════════════════╝");
-
-    esp_event_loop_create_default();
 
     vTaskDelay(pdMS_TO_TICKS(2500));
     status_led->interval = 100;

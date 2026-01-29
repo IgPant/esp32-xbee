@@ -264,7 +264,7 @@ const config_item_t CONFIG_ITEMS[] = {
         }, {
                 .key = KEY_CONFIG_UART_FWD_USB,
                 .type = CONFIG_ITEM_TYPE_BOOL,
-                .def.bool1 = false
+                .def.bool1 = true
         },
 
         // WiFi

@@ -23,6 +23,7 @@
 #include <core_dump.h>
 #include <esp_ota_ops.h>
 #include <stream_stats.h>
+#include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_system.h"
@@ -87,8 +88,11 @@ void app_main()
     void uart_to_usb_serial_handler(void *arg, esp_event_base_t event_base, int32_t event_id, void *event_data) {
         if (event_base == UART_EVENT_READ) {
             size_t event_data_size = (size_t) event_id;
-            fwrite(event_data, 1, event_data_size, stdout);
-            fflush(stdout);
+            // Check if the buffer starts with "$PESP"
+            if (!(event_data_size >= 5 && strncmp((char*)event_data, "$PESP", 5) == 0)) {
+                fwrite(event_data, 1, event_data_size, stdout);
+                fflush(stdout);
+            }
         }
     }
     if (config_get_bool1(CONF_ITEM(KEY_CONFIG_UART_FWD_USB))) {

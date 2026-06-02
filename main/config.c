@@ -104,7 +104,7 @@ const config_item_t CONFIG_ITEMS[] = {
         {
                 .key = KEY_CONFIG_NTRIP_CLIENT_ACTIVE,
                 .type = CONFIG_ITEM_TYPE_BOOL,
-                .def.bool1 = false
+                .def.bool1 = true
         }, {
                 .key = KEY_CONFIG_NTRIP_CLIENT_COLOR,
                 .type = CONFIG_ITEM_TYPE_COLOR,
@@ -112,7 +112,7 @@ const config_item_t CONFIG_ITEMS[] = {
         }, {
                 .key = KEY_CONFIG_NTRIP_CLIENT_HOST,
                 .type = CONFIG_ITEM_TYPE_STRING,
-                .def.str = ""
+                .def.str = "192.168.1.20"
         }, {
                 .key = KEY_CONFIG_NTRIP_CLIENT_PORT,
                 .type = CONFIG_ITEM_TYPE_UINT16,
@@ -120,16 +120,16 @@ const config_item_t CONFIG_ITEMS[] = {
         }, {
                 .key = KEY_CONFIG_NTRIP_CLIENT_MOUNTPOINT,
                 .type = CONFIG_ITEM_TYPE_STRING,
-                .def.str = ""
+                .def.str = "mount"
         }, {
                 .key = KEY_CONFIG_NTRIP_CLIENT_USERNAME,
                 .type = CONFIG_ITEM_TYPE_STRING,
-                .def.str = ""
+                .def.str = "admin"
         }, {
                 .key = KEY_CONFIG_NTRIP_CLIENT_PASSWORD,
                 .type = CONFIG_ITEM_TYPE_STRING,
                 .secret = true,
-                .def.str = ""
+                .def.str = "admin"
         }, {
                 .key = KEY_CONFIG_NTRIP_CLIENT_FW_UART,
                 .type = CONFIG_ITEM_TYPE_BOOL,

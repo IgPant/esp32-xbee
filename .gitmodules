@@ -1,3 +1,4 @@
 [submodule "components/button"]
 	path = components/button
-	url = https://github.com/nebkat/esp32-button.git
+	url = git@github.com:IgPant/esp32-button.git
+	branch = custom
